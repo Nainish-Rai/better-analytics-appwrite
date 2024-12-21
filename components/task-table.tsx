@@ -13,21 +13,21 @@ const tasks = [
     id: 1,
     feature: "User Authentication",
     description: "Implement Appwrite authentication system",
-    status: "pending",
+    status: "completed",
     priority: "high",
   },
   {
     id: 2,
     feature: "Website Management",
     description: "CRUD operations for website tracking",
-    status: "pending",
+    status: "completed",
     priority: "high",
   },
   {
     id: 3,
-    feature: "Tracking Script",
-    description: "Create lightweight tracking script",
-    status: "pending",
+    feature: "Basic Tracking Script",
+    description: "Initial tracking script implementation",
+    status: "completed",
     priority: "high",
   },
   {
@@ -35,9 +35,50 @@ const tasks = [
     feature: "Real-time Dashboard",
     description: "Implement WebSocket for live updates",
     status: "pending",
+    priority: "high",
+  },
+  {
+    id: 5,
+    feature: "Advanced Event Tracking",
+    description: "Custom event tracking and user interactions",
+    status: "pending",
+    priority: "high",
+  },
+  {
+    id: 6,
+    feature: "Session Analytics",
+    description: "Track user sessions and time on page",
+    status: "pending",
     priority: "medium",
   },
-  // Add more tasks as needed
+  {
+    id: 7,
+    feature: "User Flow Visualization",
+    description: "Visual representation of user journeys",
+    status: "pending",
+    priority: "medium",
+  },
+  {
+    id: 8,
+    feature: "Conversion Funnels",
+    description: "Track and analyze conversion paths",
+    status: "pending",
+    priority: "medium",
+  },
+  {
+    id: 9,
+    feature: "Data Export",
+    description: "Export analytics data in various formats",
+    status: "pending",
+    priority: "low",
+  },
+  {
+    id: 10,
+    feature: "Team Collaboration",
+    description: "Multi-user access and role management",
+    status: "pending",
+    priority: "low",
+  },
 ];
 
 export function TaskTable() {
