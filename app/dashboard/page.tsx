@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { WebsiteForm } from "@/components/websites/website-form";
-import { TrackingCode } from "@/components/tracking-code";
 import { Website } from "@/types/website";
 import {
   databases,
@@ -11,11 +12,11 @@ import {
 } from "@/lib/appwrite";
 import { Query } from "appwrite";
 import { useAuth } from "@/providers/auth-provider";
-import { AnalyticsDashboard } from "@/components/analytics/dashboard";
 
 export default function DashboardPage() {
   const [websites, setWebsites] = useState<Website[]>([]);
   const { user } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     if (user) {
@@ -46,19 +47,23 @@ export default function DashboardPage() {
       {websites.length > 0 && (
         <div>
           <h2 className="text-2xl font-bold mb-4">Your Websites</h2>
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {websites.map((website) => (
-              <div
+              <Card
                 key={website.$id}
-                className="border rounded-lg p-4 space-y-6"
+                className="cursor-pointer hover:shadow-lg transition-shadow"
+                onClick={() => router.push(`/analytics/${website.trackingId}`)}
               >
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{website.name}</h3>
-                  <p className="text-muted-foreground mb-4">{website.url}</p>
-                  <TrackingCode trackingId={website.trackingId} />
-                </div>
-                <AnalyticsDashboard trackingId={website.trackingId} />
-              </div>
+                <CardHeader>
+                  <CardTitle>{website.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{website.url}</p>
+                  <p className="text-sm mt-2 font-mono">
+                    ID: {website.trackingId}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
