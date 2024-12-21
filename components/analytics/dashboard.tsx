@@ -2,6 +2,7 @@
 
 import { useAnalytics } from "@/hooks/use-analytics";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
   LineChart,
   Line,
@@ -42,6 +43,9 @@ export function AnalyticsDashboard({ trackingId }: AnalyticsDashboardProps) {
 
   return (
     <div className="space-y-8">
+      <div className="flex justify-end">
+        <ThemeToggle />
+      </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./theme-toggle";
 
 export function MainNav() {
   const pathname = usePathname();
@@ -32,13 +33,16 @@ export function MainNav() {
                 href={route.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
-                  route.active ? "text-black" : "text-muted-foreground"
+                  route.active
+                    ? "text-black dark:text-white"
+                    : "text-muted-foreground"
                 )}
               >
                 {route.label}
               </Link>
             ))}
           </div>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
