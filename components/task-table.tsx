@@ -32,25 +32,26 @@ const tasks = [
   },
   {
     id: 4,
-    feature: "Real-time Dashboard",
-    description: "Implement WebSocket for live updates",
-    status: "pending",
+    feature: "Advanced Event Tracking",
+    description: "Custom event tracking and user interactions",
+    status: "in_progress", // Update status to show progress
     priority: "high",
   },
   {
     id: 5,
-    feature: "Advanced Event Tracking",
-    description: "Custom event tracking and user interactions",
-    status: "pending",
-    priority: "high",
-  },
-  {
-    id: 6,
     feature: "Session Analytics",
     description: "Track user sessions and time on page",
     status: "pending",
     priority: "medium",
   },
+  {
+    id: 6,
+    feature: "Real-time Dashboard",
+    description: "Implement WebSocket for live updates",
+    status: "pending",
+    priority: "medium",
+  },
+
   {
     id: 7,
     feature: "User Flow Visualization",
